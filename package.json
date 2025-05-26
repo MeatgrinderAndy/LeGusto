@@ -10,6 +10,9 @@
     "frontend": "cd client && npm run start",
     "start": "concurrently \"npm run backend\" \"npm run frontend\""
   },
+  "dependencies": {
+    "concurrently": "^9.1.2"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"
