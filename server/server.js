@@ -10,6 +10,7 @@ const cors = require('cors');
 const multer = require('multer');
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
+require('dotenv').config();
 
 const saltRounds = parseInt(process.env.SALT_ROUNDS);
 const jwtSecret = process.env.JWT_SECRET;
