@@ -1,0 +1,363 @@
+/* Основные стили */
+.page-container {
+  margin-top: 9vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.menu-page {
+  flex: 1;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.menu-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.title-gradient {
+  background: linear-gradient(90deg, #febe00, #d6a100);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Контейнер меню */
+.category-menu-container {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Боковая панель категорий */
+.category-sidebar {
+  flex: 0 0 280px;
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.category-item:hover {
+  background-color: #2d2d2d;
+}
+
+.category-item.active {
+  background-color: #2d2d2d;
+  border-left: 3px solid #febe00;
+}
+
+.category-image-container {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.category-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.category-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #252525;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-name {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.category-item.active .category-name {
+  color: #febe00;
+}
+
+/* Контент категории */
+.category-content {
+  flex: 1;
+}
+
+.category-section {
+  display: none;
+}
+
+.category-section.active {
+  display: block;
+}
+
+/* Баннер категории */
+.category-banner {
+  position: relative;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.category-banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-banner-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #252525;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-banner-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: white;
+}
+
+.category-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #febe00;
+  font-family: 'Playfair Display', serif;
+}
+
+.category-description {
+  color: #e0e0e0;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 80%;
+}
+
+/* Стили для карточек блюд */
+.items-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #2d2d2d;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border: 1px solid #333;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.item-image-container {
+  width: 100%;
+  height: 180px;
+}
+
+.item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #252525;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-details {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.item-name {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #febe00;
+}
+
+.item-description {
+  color: #b0b0b0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.item-price {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: auto;
+}
+
+/* Добавленные стили для анимации */
+.menu-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.menu-item.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Анимация для баннера категории */
+.category-banner {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.5s ease 0.2s;
+}
+
+.category-section.active .category-banner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.no-category-selected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #e0e0e0;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Улучшенная анимация для категорий */
+.category-item {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.category-item:hover {
+  transform: translateX(5px);
+}
+
+.category-item.active {
+  transform: translateX(5px);
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .category-menu-container {
+    flex-direction: column;
+  }
+  
+  .category-sidebar {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .category-list {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
+  
+  .category-item {
+    min-width: 200px;
+    flex-direction: column;
+    text-align: center;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+  }
+  
+  .category-item.active {
+    border-left: none;
+    border-bottom: 3px solid #febe00;
+  }
+  
+  .category-image-container {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .category-banner {
+    height: 150px;
+  }
+  
+  .category-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .items-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .menu-title {
+    font-size: 2rem;
+  }
+  
+  .category-banner {
+    height: 120px;
+  }
+  
+  .category-banner-overlay {
+    padding: 1rem;
+  }
+  
+  .category-title {
+    font-size: 1.3rem;
+  }
+  
+  .category-description {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+}

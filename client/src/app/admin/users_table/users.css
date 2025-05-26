@@ -1,0 +1,207 @@
+/* Основные стили страницы */
+.admin-page {
+  margin-top: 9vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #121212;
+  color: #e0e0e0;
+  padding: 2rem;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.admin-title {
+  font-size: 2rem;
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+}
+
+.title-gradient {
+  background: linear-gradient(90deg, #febe00, #d6a100);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.back-link {
+  color: #febe00;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 1rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+  color: #d6a100;
+}
+
+.back-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Стили таблицы */
+.admin-table-container {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th {
+  text-align: left;
+  padding: 1rem;
+  background-color: #2d2d2d;
+  color: #febe00;
+  font-weight: 600;
+  border-bottom: 2px solid #333;
+}
+
+.admin-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-table tr:hover {
+  background-color: #2d2d2d;
+}
+
+/* Стили кнопок и действий */
+.actions-cell {
+  display: flex;
+  gap: 1rem;
+}
+
+.delete-btn {
+  color: #ff6b6b;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  transition: all 0.2s;
+}
+
+.delete-btn:hover:not(:disabled) {
+  text-decoration: underline;
+  color: #ff5252;
+}
+
+.delete-btn:disabled {
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Стили статусов */
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-vip {
+  background-color: #14532d;
+  color: #bbf7d0;
+}
+
+.status-not-vip {
+  background-color: #374151;
+  color: #d1d5db;
+}
+
+.status-admin {
+  background-color: #1e3a8a;
+  color: #bfdbfe;
+}
+
+.status-not-admin {
+  background-color: #374151;
+  color: #d1d5db;
+}
+
+/* Стили загрузки и ошибок */
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(254, 190, 0, 0.3);
+  border-radius: 50%;
+  border-top-color: #febe00;
+  animation: spin 1s ease-in-out infinite;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: #2d2d2d;
+  border-radius: 8px;
+  color: #ff6b6b;
+  margin-bottom: 1.5rem;
+}
+
+.error-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .admin-title {
+    font-size: 1.5rem;
+  }
+  
+  .admin-table th,
+  .admin-table td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .admin-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

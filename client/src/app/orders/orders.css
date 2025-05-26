@@ -1,0 +1,266 @@
+/* Основные стили */
+.ordersContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.ordersHeader {
+  margin-top: 10vh;
+  margin-bottom: 2rem;
+}
+
+.ordersTitle {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.titleGradient {
+  background: linear-gradient(90deg, #febe00, #d6a100);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ordersFilter {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filterButton {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: #252525;
+  color: #e0e0e0;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filterButton:hover {
+  background-color: #333;
+}
+
+.filterButton.activeFilter {
+  background-color: #febe00;
+  color: #121212;
+}
+
+/* Карточка заказа */
+.orderCard {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.orderHeader {
+  padding: 1rem;
+  background-color: #252525;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orderNumber {
+  font-weight: bold;
+  color: #febe00;
+}
+
+.orderDate {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+}
+
+.orderStatus {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 500;
+}
+
+.orderStatus.pending {
+  color: #febe00;
+}
+
+.orderStatus.completed {
+  color: #4CAF50;
+}
+
+.orderStatus.cancelled {
+  color: #f44336;
+}
+
+.orderTotal {
+  font-weight: bold;
+}
+
+/* Содержимое заказа */
+.orderContent {
+  padding: 1rem;
+}
+
+.orderItems {
+  margin-bottom: 1rem;
+}
+
+.orderItem {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #333;
+}
+
+.itemImageContainer {
+  width: 50px;
+  height: 50px;
+  margin-right: 1rem;
+}
+
+.itemImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.itemDetails {
+  flex: 1;
+}
+
+.itemName {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.itemQuantity {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+}
+
+.itemDescription {
+  font-size: 0.85rem;
+  color: #b0b0b0;
+  margin-top: 0.25rem;
+}
+
+.itemPrice {
+  font-weight: bold;
+  color: #febe00;
+}
+
+.additionalItems {
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  text-align: center;
+}
+
+/* Подвал заказа */
+.orderFooter {
+  padding-top: 1rem;
+  border-top: 1px solid #333;
+}
+
+.deliveryInfo, .orderNotes {
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.deliveryLabel, .notesLabel {
+  color: #febe00;
+  margin-right: 0.5rem;
+}
+
+.detailsButton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #febe00;
+  color: #121212;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.detailsButton:hover {
+  background-color: #d6a100;
+}
+
+/* Сообщения */
+.noOrders {
+  text-align: center;
+  padding: 2rem;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+}
+
+.menuLink {
+  color: #febe00;
+  text-decoration: underline;
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+/* Загрузка и ошибки */
+.loadingScreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(254, 190, 0, 0.3);
+  border-radius: 50%;
+  border-top-color: #febe00;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.errorMessage {
+  background-color: #1e1e1e;
+  border-left: 4px solid #f44336;
+  color: #e0e0e0;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.backToHomeLink {
+  color: #febe00;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .ordersContainer {
+    padding: 1rem;
+  }
+  
+  .ordersFilter {
+    flex-wrap: wrap;
+  }
+  
+  .orderHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .orderStatus {
+    align-self: flex-end;
+  }
+}
