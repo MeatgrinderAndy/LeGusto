@@ -11,15 +11,23 @@ const multer = require('multer');
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-const saltRounds = 10;
-const jwtSecret = 'sUp3r-s3cre7-key-n0body-t0-know-cause-its-secret'; 
+const saltRounds = parseInt(process.env.SALT_ROUNDS);
+const jwtSecret = process.env.JWT_SECRET;
 
 const pool = new Pool({
-    user: 'gusto_admin',
-    host: 'localhost',
-    database: 'gusto_database',
-    password: '12345',
-    port: 5432,
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  port: parseInt(process.env.DB_PORT),
+});
+
+const transporter = nodemailer.createTransport({
+  service: 'Gmail',
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
+  }
 });
 
 cron.schedule('0 0 * * *', async () => {
@@ -42,13 +50,6 @@ cron.schedule('0 5 * * *', async () => {
   await pool.query('SELECT clear_old_reservations()');
 });
 
-const transporter = nodemailer.createTransport({
-  service: 'Gmail',
-  auth: {
-    user: "legustoteam@gmail.com",
-    pass: "veyx cfjl hzzi aujr"
-  }
-});
 
 cron.schedule('* * * * *', async () => {
   try {
