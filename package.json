@@ -1,0 +1,16 @@
+{
+  "name": "node_cp_gusto_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd client && npm run build",
+    "backend": "node server/server.js", 
+    "frontend": "cd client && npm run start", 
+    "start": "concurrently \"npm run backend\" \"npm run frontend\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
