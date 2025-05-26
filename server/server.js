@@ -1556,7 +1556,7 @@ app.get('/api/user/:id/orders', async (req, res) => {
   }
 });
 
-app.get('/api/menuorder', async (req, res) => {
+app.get('/api/menu/order', async (req, res) => {
   try {
     const result = await pool.query(`
       SELECT 
