@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd client && npm run build",
-    "backend": "node server/server.js", 
-    "frontend": "cd client && npm run start", 
+    "build": "npm install && cd client && npm install && npm run build",
+    "backend": "node server/server.js",
+    "frontend": "cd client && npm run start",
     "start": "concurrently \"npm run backend\" \"npm run frontend\""
   },
   "keywords": [],
